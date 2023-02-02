@@ -4,76 +4,72 @@ const { Schema } = mongoose;
 
 
  const QuestionModel = new Schema({
-    question: {type: String,default: 'what is your name'},
-    answer: {type:String,default:'Shubham'},
-    createdAt:{type:Date,default:Date.now,}
+    id: {
+        type: Number,
+        required: true
+      },
+      question: {
+        type: String,
+        required: true,
+        default:'what is your name'
+      },
+      options: [{
+        type: String,
+        required: true
+      }]
  });
-
- export default mongoose.model('Questions', QuestionModel);
 
 //Question model
 // const QuestionModel = new Schema({
-
-//         text:{
+    
+//     text:{
 //         max_length:255,
 //         type: String,
 //         required: true
-//         },
-
-//         image:{
+//     },
+        
+//        options: [{
+//     type: String,
+//     required: true
+//   }]
+//       correct:{
 //             type: String,
-//             default:'',
-//         required: false,
-//         },
-
-//         optionCount:{
-//             type: Number,
-//             default:4,
-//             validate:[max(4),min(2)]
-//         },
-
-//         option1:{
-//             type : mongoose.Schema.Types.ObjectId,
-//             ref:'Answer',
-//             required:true
-//         },
-//         option2:{
-//             type : mongoose.Schema.Types.ObjectId,
-//             ref:'Answer',
-//             required:true
-//         },
-//         option3:{
-//             type : mongoose.Schema.Types.ObjectId,
-//             ref:'Answer',
-//             required:true
-//         },
-//         option4:{
-//             type : mongoose.Schema.Types.ObjectId,
-//             ref:'Answer',
-//             required:true
-//         },
-
-//         correct:{
-//             type: mongoose.Schema.Types.ObjectId,
 //             ref:'Answer',
 //         },
-
+        
 //         timelimit:{
 //             type : Number,
 //             default:15,
 //             required : true
 //         },
-
+        
 //         marks:{
 //             type : Number,
 //             min: 0,
-//             default:5,
+//             default:0,
 //             required: true
 //         }
-
+        
 //     },
-// )
+//     )
+    
+     export default mongoose.model('Question', QuestionModel);
 
+    //  const answerModel = new Schema({
+    //     text: {
+    //         type: String,
+    //         max_length: 255,
+    //         default:'',
+    //         required: false
+    //     },
+    //     image:{
+    //         type: String,
+    //         dafault: '',
+    //         required: false
+    //     },
+       
+    // }
+    // )
 // //quiz model
 //    const Quiz = new Schema({
 
@@ -126,22 +122,7 @@ const { Schema } = mongoose;
 // // return `${Quiz}  ${this.user.email}`
 // //   }      
 
-// //ansermode
-// const answerModel = new Schema({
-//     text: {
-//         type: String,
-//         max_length: 255,
-//         default:'',
-//         required: false
-//     },
-//     image:{
-//         type: String,
-//         dafault: '',
-//         required: false
-//     },
-   
-// }
-// )
+
 
 // //scoreboard model
 // const scoreboard = new Schema({

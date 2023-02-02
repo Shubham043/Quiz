@@ -3,9 +3,9 @@ const {Schema} = mongoose;
 
 const resultModel = new Schema({
     username: {type: String},
-    result: { type:Array, default:[]},
+    result: { type:String, default:'how are you'},
     points:{type:Number, default:0},
-    achieved: {type:String,default:''},
+    achieved: {type:String},
     createdAt: {type: Date,default: Date.now}
 });
 
